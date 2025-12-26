@@ -15,10 +15,10 @@ steps:
     args:
       - compute
       - instances
-      - update-container
+      - update
       - devops-app-vm
       - --zone=us-central1-a
-      - --container-image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE}:${COMMIT_SHA}
+      - --set-container=container-name=devops-app-vm,image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE}:${COMMIT_SHA}
 
 images:
   - '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE}:${COMMIT_SHA}'
